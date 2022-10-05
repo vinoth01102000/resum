@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 align="center">  welcome {{user}} </h1>
+
+<div class="container">
+          <div class="row">
+                <div class="col-sm-6 mx-auto" style="margin-top: 30px">
+                    <form action="{% url 'home' %}" method="post">
+                        {% csrf_token %}
+                        {{user}} successfully Login!
+
+
+
+                        <div class="pull-left">
+
+                            <button type="Submit" class="btn btn-info float-left"> SHOW RESUME TEMPLATE</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-sm-6 mx-auto" style="margin-top: 170px">
+                <form action="{% url 'signout' %}" method="post">
+                    {% csrf_token %}
+<!--                    {{user}} successfully login!-->
+
+
+
+                    <div class="pull-right">
+                        <button type="Submit" class="btn btn-danger float-right">Sign out</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}
